@@ -10,9 +10,7 @@ HEADERS = {
 
 # Function to fetch NDTV homepage and get article links
 def get_article_links():
-    print("Fetching NDTV homepage...")
-    res = requests.get(BASE_URL, headers=HEADERS)
-    soup = BeautifulSoup(res.text, "html.parser")
+    
 
     links = set()
 

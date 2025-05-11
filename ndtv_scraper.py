@@ -8,11 +8,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 }
 
-# Function to fetch NDTV homepage and get article links
-def get_article_links():
-    print("Fetching NDTV homepage...")
-    res = requests.get(BASE_URL, headers=HEADERS)
-    soup = BeautifulSoup(res.text, "html.parser")
+
 
     links = set()
 

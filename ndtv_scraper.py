@@ -16,7 +16,15 @@ def get_article_links():
 
     links = set()
 
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        
+        if href.startswith("/india") or href.startswith("/world") or href.startswith("/sports") or href.startswith("/business"):
+            full_url = href if href.startswith("http") else BASE_URL + href
+            links.add(full_url)
     
+    print(f"Found {len(links)} article links.")
+    return list(links)
 
 def scrape_article(url):
     try:

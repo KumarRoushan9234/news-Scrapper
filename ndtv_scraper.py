@@ -16,16 +16,7 @@ def get_article_links():
 
     links = set()
 
-    # Inspect the NDTV homepage and find the article links
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        # You may need to adjust this part if the homepage structure has changed
-        if href.startswith("/india") or href.startswith("/world") or href.startswith("/sports") or href.startswith("/business"):
-            full_url = href if href.startswith("http") else BASE_URL + href
-            links.add(full_url)
     
-    print(f"Found {len(links)} article links.")
-    return list(links)
 
 def scrape_article(url):
     try:
